@@ -1,16 +1,14 @@
-import { cn } from "@/lib/utils";
-
-function Separator({ className }: { className?: string }) {
+export default function Separator() {
   return (
     <div
-      className={cn(
-        "relative flex h-8 w-full border-x border-edge",
-        "before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]",
-        "before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56",
-        className
-      )}
-    ></div>
+      className="
+        w-full
+        h-[2px]
+        opacity-40
+        bg-repeat-x
+        bg-[length:12px_100%]
+        bg-[linear-gradient(135deg,#ffffff10_0%,#ffffff10_25%,transparent_25%,transparent_50%,#ffffff10_50%,#ffffff10_75%,transparent_75%,transparent_100%)]
+      "
+    />
   );
 }
-
-export default Separator ; 

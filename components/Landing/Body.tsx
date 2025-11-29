@@ -21,10 +21,31 @@ export function HeroSectionOne() {
       {/* <div className="px-4 py-10 md:py-20"> */}
         
          <DisplayPicture/>
+         <br/>
         
-         <Separator/>
+         {/* <Separator/> */}
 
          <Introduction/>
+
+         <div className="space-y-16">
+      <section>
+        <h1 className="text-4xl font-bold">About Me</h1>
+        <p>Short intro here…</p>
+      </section>
+
+      <Separator />
+
+      <section>
+        <h1 className="text-4xl font-bold">Projects</h1>
+        <p>All my work…</p>
+      </section>
+
+      <Separator />
+
+      <section>
+        <h1 className="text-4xl font-bold">Skills</h1>
+      </section>
+    </div>
       {/* </div> */}
     </div>
     
