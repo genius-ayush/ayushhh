@@ -8,6 +8,8 @@ import Introduction from "./Introduction";
 import Separator from "../ui/section-separator";
 import Socials from "./Socials";
 import About from "./About";
+import Graph from "./Graph";
+import TechStack from "./TechStack";
 
 export function HeroSectionOne() {
   return (
@@ -32,6 +34,14 @@ export function HeroSectionOne() {
         <Separator/>
 
         <About/>
+
+        <Separator/>
+
+        <Graph/>
+
+        <Separator/>  
+
+      <TechStack/>
 
         <Separator/>
 

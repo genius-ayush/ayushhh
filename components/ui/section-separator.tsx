@@ -2,7 +2,7 @@ import React from "react";
 
 const Separator = () => {
   return (
-    <div className="w-full h-8 relative overflow-hidden bg-white dark:bg-[#0a0a0a] border-y border-neutral-200 dark:border-white/5 border-l border-r border-neutral-200 dark:border-white/10">
+    <div className="w-full h-8 relative overflow-hidden bg-white dark:bg-[#0a0a0a] border-y border-neutral-200 dark:border-white/5 border-l border-r border-neutral-200 dark:border-white/10 ">
       <div
         className="absolute inset-0 block dark:hidden"
         style={{

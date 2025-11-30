@@ -2,7 +2,7 @@ import { Panel, PanelContent, PanelHeader, PanelTitle } from "./Panel"
 
 export default function About() {
     return (
-     <section className="text-sm leading-6  pb-4">
+     <section className="text-sm leading-6  pb-4 border-b mb-6">
         <h1 className="text-3xl font-bold text-center p-2 border-t mt-6">About</h1>
       <ul className="list-disc pl-5 space-y-3 ml-4 pr-6">
         <li>
