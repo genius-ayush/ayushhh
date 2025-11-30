@@ -5,7 +5,7 @@ export default function Introduction() {
   return (
     <div className="max-w-6xl w-full rounded-2xl border 
       border-neutral-200 dark:border-neutral-800 
-      mt-10 p-6 shadow-sm 
+      mt-7 p-6 shadow-sm mb-7
       "
     >
 

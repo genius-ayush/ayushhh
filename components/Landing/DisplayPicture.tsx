@@ -20,7 +20,7 @@ function DisplayPicture() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <Card className="w-full max-w-6xl   mt-10  p-6  bg-[#ffffff] dark:bg-[#0a0a0a]">
+        <Card className="w-full max-w-6xl   mt-7  p-6  bg-[#ffffff] dark:bg-[#0a0a0a]">
             <CardContent className="flex items-center gap-4 p-0">
                 {/* Avatar */}
 
