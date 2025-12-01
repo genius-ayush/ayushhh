@@ -10,6 +10,9 @@ import Socials from "./Socials";
 import About from "./About";
 import Graph from "./Graph";
 import TechStack from "./TechStack";
+import Experience from "./Experience";
+import Projects from "./Projects";
+import Footer from "./Footer";
 
 export function HeroSectionOne() {
   return (
@@ -45,16 +48,15 @@ export function HeroSectionOne() {
 
         <Separator/>
 
-        <section>
-          <h1 className="text-4xl font-bold">Projects</h1>
-          <p>All my work…</p>
-        </section>
+        <Experience/>
 
         <Separator />
 
-        <section>
-          <h1 className="text-4xl font-bold">Skills</h1>
-        </section>
+        <Projects/>
+
+        <Separator />
+
+        <Footer/>
 
 
       </div>

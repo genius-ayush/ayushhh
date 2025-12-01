@@ -1,11 +1,8 @@
 import Image from "next/image";
-import React from "react";
 
-// import { SimpleTooltip } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
-// import { TECH_STACK } from "../data/tech-stack";
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "./Panel";
+import { Panel, PanelContent } from "./Panel";
 import { SimpleTooltip } from "../ui/tooltip";
 
 const TECH_STACK = [
@@ -13,54 +10,49 @@ const TECH_STACK = [
     key: "typescript",
     title: "TypeScript",
     href: "https://www.typescriptlang.org/",
+    urldark: "/typescript_dark.svg",
+    urllight: "/typescript_dark.svg",
     categories: ["Language"],
   },
   {
     key: "js",
     title: "JavaScript",
+    urldark: "/js.svg",
+    urllight: "/js.svg",
     href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+
     categories: ["Language"],
   },
-  // {
-  //   key: "python",
-  //   title: "Python",
-  //   href: "https://www.python.org/",
-  //   categories: ["Language"],
-  // },
-  // {
-  //   key: "php",
-  //   title: "PHP",
-  //   href: "https://www.php.net/",
-  //   categories: ["Language"],
-  // },
-  // {
-  //   key: "java",
-  //   title: "Java",
-  //   href: "https://www.java.com/",
-  //   categories: ["Language"],
-  // },
   {
     key: "nodejs",
     title: "Node.js",
     href: "https://nodejs.org/",
+    urldark: "/nodejs.svg",
+    urllight: "/nodejs.svg",
     categories: ["Runtime Environment"],
   },
   {
     key: "bun",
     title: "Bun",
     href: "https://bun.sh/",
+    urldark: "/bun.svg",
+    urllight: "/bun.svg",
     categories: ["Runtime Environment"],
   },
   {
     key: "react",
     title: "React",
     href: "https://react.dev/",
+    urldark: "/react-navigation.svg", 
+    urllight: "/react-navigation.svg",
     categories: ["Library", "UI Library"],
   },
   {
-    key: "nextjs2",
+    key: "nextjs",
     title: "Next.js",
     href: "https://nextjs.org/",
+    urldark: "/nextjs_dark.svg",
+    urllight: "/nextjs_light.svg",
     categories: ["Framework"],
     theme: true,
   },
@@ -68,12 +60,16 @@ const TECH_STACK = [
     key: "tailwindcss",
     title: "Tailwind CSS",
     href: "https://tailwindcss.com/",
+    urldark: "/tailwindcss.svg",
+    urllight: "/tailwindcss.svg",
     categories: ["Framework"],
   },
   {
     key: "shadcn-ui",
     title: "shadcn/ui",
     href: "https://ui.shadcn.com/",
+    urldark: "/shadcn_dark.svg",
+    urllight: "/shadcn_light.svg",
     categories: ["Library", "Component Library"],
     theme: true,
   },
@@ -81,6 +77,8 @@ const TECH_STACK = [
     key: "radixui",
     title: "Radix UI",
     href: "https://www.radix-ui.com/",
+    urldark: "/radixui-dark.svg",
+    urllight: "/radixui-light.svg",
     categories: ["Library", "Component Library"],
     theme: true,
   },
@@ -88,30 +86,16 @@ const TECH_STACK = [
     key: "motion",
     title: "Motion",
     href: "https://motion.dev/",
+    urldark: "/motion.svg",
+    urllight: "/motion.svg",
     categories: ["Library", "Animation"],
   },
-  // {
-  //   key: "mobx-state-tree",
-  //   title: "MobX-State-Tree",
-  //   href: "https://mobx-state-tree.js.org/",
-  //   categories: ["State Management"],
-  // },
-  // {
-  //   key: "redux",
-  //   title: "Redux",
-  //   href: "https://redux.js.org/",
-  //   categories: ["State Management"],
-  // },
-  // {
-  //   key: "antd",
-  //   title: "Ant Design",
-  //   href: "https://ant.design/",
-  //   categories: ["Library", "UI Library"],
-  // },
   {
     key: "react-router",
     title: "React Router",
     href: "https://reactrouter.com/",
+    urldark: "/react-router-dark.svg",
+    urllight: "/react-router-light.svg",
     categories: ["Library", "Navigation"],
     theme: true,
   },
@@ -119,67 +103,73 @@ const TECH_STACK = [
     key: "react-navigation",
     title: "React Navigation",
     href: "https://reactnavigation.org/",
+    urldark: "/react-navigation.svg",
+    urllight: "/react-navigation.svg",
     categories: ["Library", "Navigation"],
   },
-  // {
-  //   key: "loopback",
-  //   title: "LoopBack",
-  //   href: "https://loopback.io/",
-  //   categories: ["Framework"],
-  // },
-  // {
-  //   key: "laravel",
-  //   title: "Laravel",
-  //   href: "https://laravel.com/",
-  //   categories: ["Framework"],
-  // },
   {
     key: "git",
     title: "Git",
     href: "https://git-scm.com/",
+    urldark: "/git.svg",
+    urllight: "/git.svg",
     categories: ["Version Control"],
-    
+
   },
   {
     key: "docker",
     title: "Docker",
     href: "https://www.docker.com/",
+    urldark: "/docker.svg",
+    urllight: "/docker.svg",
     categories: ["Containerization"],
   },
   {
     key: "mysql",
     title: "MySQL",
     href: "https://www.mysql.com/",
+    urldark: "/mysql.svg",
+    urllight: "/mysql.svg",
     categories: ["Database"],
   },
   {
     key: "mongodb",
     title: "MongoDB",
     href: "https://www.mongodb.com/",
+    urldark: "/mongodb.svg",
+    urllight: "/mongodb.svg",
     categories: ["Database"],
   },
   {
     key: "redis",
     title: "Redis",
     href: "https://redis.io/",
+    urldark: "/redis.svg",
+    urllight: "/redis.svg",
     categories: ["Database"],
   },
   {
     key: "figma",
     title: "Figma",
     href: "https://www.figma.com/",
+    urldark: "/figma.svg",
+    urllight: "/figma.svg",
     categories: ["Tools", "Design"],
   },
   {
     key: "ps",
     title: "Adobe Photoshop",
     href: "https://www.adobe.com/vn_en/products/photoshop.html",
+    urldark: "/ps.svg",
+    urllight: "/ps.svg",
     categories: ["Tools", "Design"],
   },
   {
     key: "chatgpt",
     title: "ChatGPT",
     href: "https://chatgpt.com/",
+    urldark: "/chatgpt-dark.svg",
+    urllight: "/chatgpt-light.svg",
     categories: ["Tools", "AI"],
     theme: true,
   },
@@ -187,13 +177,31 @@ const TECH_STACK = [
     key: "aws",
     title: "AWS",
     href: "https://aws.amazon.com/",
+    urldark: "/awsdark.svg",
+    urllight: "/awsdark.svg",
     categories: ["Tools"],
+  },
+  {
+    key: "nginx",
+    title: "Nginx",
+    href: "https://nginx.org/",
+    urldark: "/nginx-icon.svg",
+    urllight: "/nginx-icon.svg",
+    categories: ["Server"],
+  },
+  {
+    key: "linux",
+    title: "Linux",
+    href: "https://www.linux.com/",
+    urldark: "/linux.svg",
+    urllight: "/linux.svg",
+    categories: ["OS"],
   },
 ];
 
 export default function TechStack() {
   return (
-    <Panel id="stack">
+    <Panel id="stack" className="mb-6 border-b">
       <h1 className="text-3xl font-bold text-center p-2 border-t mt-6">Tech Stack</h1>
 
       <PanelContent
@@ -205,6 +213,7 @@ export default function TechStack() {
       >
         <ul className="flex flex-wrap gap-4 select-none">
           {TECH_STACK.map((tech) => {
+            const isThemeDependent = tech.urldark !== tech.urllight;
             return (
               <li key={tech.key} className="flex">
                 <SimpleTooltip content={tech.title}>
@@ -214,31 +223,35 @@ export default function TechStack() {
                     rel="noopener noreferrer"
                     aria-label={tech.title}
                   >
-                    {tech.theme ? (
+                    {isThemeDependent ? (
                       <>
+                        {/* Light Mode */}
                         <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-light.svg`}
+                          src={tech.urllight}
                           alt={`${tech.title} light icon`}
                           width={32}
                           height={32}
-                          className="hidden [html.light_&]:block"
+                          className="block dark:hidden"
                           unoptimized
                         />
+
+                        {/* Dark Mode */}
                         <Image
-                          src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}-dark.svg`}
+                          src={tech.urldark}
                           alt={`${tech.title} dark icon`}
                           width={32}
                           height={32}
-                          className="hidden [html.dark_&]:block"
+                          className="hidden dark:block"
                           unoptimized
                         />
                       </>
                     ) : (
                       <Image
-                        src={`https://assets.chanhdai.com/images/tech-stack-icons/${tech.key}.svg`}
+                        src={tech.urldark}
                         alt={`${tech.title} icon`}
                         width={32}
                         height={32}
+                        className="block"
                         unoptimized
                       />
                     )}

@@ -4,8 +4,10 @@ import { useTheme } from '@/hooks/use-theme';
 export default function Graph() {
     const theme = useTheme();
     return (
-        <div>
-            <GitHubCalendar username="genius-ayush" colorScheme={theme} />
+        <div className="flex justify-center w-full p-4 overflow-x-auto">
+            <div className="min-w-fit">
+                <GitHubCalendar username="genius-ayush" colorScheme={theme} />
+            </div>
         </div>
     );
 }
