@@ -3,16 +3,17 @@ import { Card, CardContent } from '../ui/card'
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
-import { BadgeCheck } from 'lucide-react';
+import { BadgeCheck, FileDown } from 'lucide-react';
 import { StripedPattern } from '../magicui/striped-pattern';
+
 const texts = [
     "Building better experiences",
     "Software engineer",
     "Code. Craft. Create",
 ];
+
 function DisplayPicture() {
     const [index, setIndex] = React.useState(0);
-
 
     React.useEffect(() => {
         const interval = setInterval(() => {
@@ -20,6 +21,7 @@ function DisplayPicture() {
         }, 3000);
         return () => clearInterval(interval);
     }, []);
+
     return (
         <Card className="w-full max-w-6xl mt-7 p-6 bg-[#ffffff] dark:bg-[#0a0a0a] rounded-none overflow-hidden h-auto md:h-[250px]">
             <div className="relative h-auto md:h-[250px] w-full flex flex-col md:flex-row">
@@ -61,12 +63,25 @@ function DisplayPicture() {
                                 </motion.p>
                             </AnimatePresence>
                         </div>
+
+                        {/* Resume Button – added here */}
+                        <a
+                            href="https://drive.google.com/file/d/1RvrYEinaMoMmTgyG2-W09jWAkZHzCdS2/view?usp=sharing" // or "/Ayush_Rawal_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-medium
+                                       border border-zinc-300 dark:border-zinc-700 rounded-md
+                                       hover:bg-zinc-900 hover:text-white dark:hover:bg-zinc-100 dark:hover:text-black
+                                       transition-colors"
+                        >
+                            <FileDown className="w-4 h-4" />
+                            Download Resume
+                        </a>
                     </div>
                 </CardContent>
             </div>
         </Card>
     );
-
 }
 
-export default DisplayPicture
+export default DisplayPicture;
