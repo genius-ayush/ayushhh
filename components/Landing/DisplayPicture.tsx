@@ -4,6 +4,7 @@ import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image';
 import { BadgeCheck } from 'lucide-react';
+import { StripedPattern } from '../magicui/striped-pattern';
 const texts = [
     "Building better experiences",
     "Software engineer",
@@ -20,51 +21,52 @@ function DisplayPicture() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <Card className="w-full max-w-6xl   mt-7  p-6  bg-[#ffffff] dark:bg-[#0a0a0a]">
-            <CardContent className="flex items-center gap-4 p-0">
-                {/* Avatar */}
+        <Card className="w-full max-w-6xl mt-7 p-6 bg-[#ffffff] dark:bg-[#0a0a0a] rounded-none overflow-hidden h-auto md:h-[250px]">
+            <div className="relative h-auto md:h-[250px] w-full flex flex-col md:flex-row">
 
-                <div className="relative w-52 h-52 rounded-full overflow-hidden border-2 border-zinc-700 ">
-                    <Image
-                        src="/ayushdp.png"
-                        alt="Avatar"
-                        fill
-                        className="object-cover"
-                    />
-                </div>
+                {/* Pattern */}
+                <StripedPattern className="stroke-[0.1] [stroke-dasharray:8,4]" />
 
+                {/* CONTENT ON TOP */}
+                <CardContent className="relative z-10 flex flex-col md:flex-row items-center gap-8 p-0">
 
-                {/* Text Section */}
-                <div className="flex flex-col">
-                    {/* <span className="text-xs text-zinc-500 font-medium mb-1">
-                        text-3xl text-zinc-50 font-medium
-                    </span> */}
-
-
-                    <div className="flex items-center gap-2">
-                        <h1 className="text-3xl font-semibold">Ayush Rawal</h1>
-                        <BadgeCheck className="w-5 h-5 text-sky-500" />
+                    {/* Avatar */}
+                    <div className="relative w-52 h-52 rounded-none overflow-hidden border-2 border-zinc-700 shrink-0">
+                        <Image
+                            src="/ayushdp.png"
+                            alt="Avatar"
+                            fill
+                            className="object-cover"
+                        />
                     </div>
 
+                    {/* Text Section */}
+                    <div className="flex flex-col items-center md:items-start text-center md:text-left mt-4 md:mt-0">
+                        <div className="flex items-center gap-2">
+                            <h1 className="text-3xl font-semibold">Ayush Rawal</h1>
+                            <BadgeCheck className="w-5 h-5 text-sky-500" />
+                        </div>
 
-                    <div className="mt-1 h-6 overflow-hidden relative leading-none whitespace-nowrap">
-                        <AnimatePresence mode="wait">
-                            <motion.p
-                                key={index}
-                                initial={{ rotateX: 90, opacity: 0 }}
-                                animate={{ rotateX: 0, opacity: 1 }}
-                                exit={{ rotateX: -90, opacity: 0 }}
-                                transition={{ duration: 0.45, ease: "easeInOut" }}
-                                className="text-zinc-400 text-sm absolute"
-                            >
-                                {texts[index]}
-                            </motion.p>
-                        </AnimatePresence>
+                        <div className="mt-1 h-6 overflow-hidden relative leading-none whitespace-nowrap w-full flex justify-center md:justify-start">
+                            <AnimatePresence mode="wait">
+                                <motion.p
+                                    key={index}
+                                    initial={{ rotateX: 90, opacity: 0 }}
+                                    animate={{ rotateX: 0, opacity: 1 }}
+                                    exit={{ rotateX: -90, opacity: 0 }}
+                                    transition={{ duration: 0.45, ease: "easeInOut" }}
+                                    className="text-zinc-400 text-sm absolute"
+                                >
+                                    {texts[index]}
+                                </motion.p>
+                            </AnimatePresence>
+                        </div>
                     </div>
-                </div>
-            </CardContent>
+                </CardContent>
+            </div>
         </Card>
-    )
+    );
+
 }
 
 export default DisplayPicture

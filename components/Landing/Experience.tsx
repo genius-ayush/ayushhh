@@ -69,7 +69,7 @@ export default function Experience() {
     return (
         <div className="mb-6 border-b w-full">
             <h1 className="text-3xl font-bold text-center p-2 border-t mt-6 mb-2">
-                Projects <span className="text-sm text-zinc-500 dark:text-zinc-400">({EXPERIENCES.length})</span>
+                Experience <span className="text-sm text-zinc-500 dark:text-zinc-400">({EXPERIENCES.length})</span>
             </h1>
 
             <div className="space-y-2">

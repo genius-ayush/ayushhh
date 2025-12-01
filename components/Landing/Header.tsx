@@ -15,7 +15,7 @@ const Header = () => {
 
           </div>
           <div className="border-l">
-          <AnimatedThemeToggler className="rounded-md border p-1 shadow-md ml-5" duration={500}/>
+          <AnimatedThemeToggler className="rounded-md border p-1 shadow-md ml-5" duration={1000} />
           </div>
         </div>
       </nav>

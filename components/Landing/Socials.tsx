@@ -5,27 +5,27 @@ import { Panel, PanelHeader, PanelTitle } from "./Panel";
 const links = [
   {
     title: "X (formerly Twitter)",
-    description: "@iamcdai",
+    description: "@ayushh_rawal_",
     icon: "https://assets.chanhdai.com/images/link-icons/x.webp",
-    href: "https://twitter.com/iamcdai",
+    href: "https://x.com/ayushh_rawal_",
   },
   {
     title: "GitHub",
-    description: "ncdai",
+    description: "genius-ayush",
     icon: "https://assets.chanhdai.com/images/link-icons/github.webp",
-    href: "https://github.com/ncdai",
+    href: "https://github.com/genius-ayush",
   },
   {
     title: "LinkedIn",
-    description: "ncdai",
+    description: "ayush_rawal_",
     icon: "https://assets.chanhdai.com/images/link-icons/linkedin.webp",
-    href: "https://linkedin.com/in/ncdai",
+    href: "https://www.linkedin.com/in/ayushrawal123/",
   },
   {
-    title: "daily.dev",
-    description: "@ncdai",
-    icon: "https://assets.chanhdai.com/images/link-icons/dailydotdev.webp",
-    href: "https://app.daily.dev/ncdai",
+    title: "Instagram",
+    description: "@ayushh_rawal_",
+    icon: "/instagram.svg",
+    href: "https://www.instagram.com/ayushh_rawal_",
   }
 ];
 
