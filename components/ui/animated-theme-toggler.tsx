@@ -5,7 +5,6 @@ import { Moon, Sun } from "lucide-react"
 import { flushSync } from "react-dom"
 import { cn } from "@/lib/utils"
 
-
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
   duration?: number
@@ -16,15 +15,27 @@ export const AnimatedThemeToggler = ({
   duration = 400,
   ...props
 }: AnimatedThemeTogglerProps) => {
-  const [isDark, setIsDark] = useState(false)
+  // DEFAULT: DARK MODE
+  const [isDark, setIsDark] = useState(true)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
+    const storedTheme = localStorage.getItem("theme")
+
+    // If no theme stored, set dark mode as default
+    if (!storedTheme) {
+      document.documentElement.classList.add("dark")
+      localStorage.setItem("theme", "dark")
+      setIsDark(true)
+    } else {
+      const enabled = storedTheme === "dark"
+      setIsDark(enabled)
+      document.documentElement.classList.toggle("dark", enabled)
+    }
+
     const updateTheme = () => {
       setIsDark(document.documentElement.classList.contains("dark"))
     }
-
-    updateTheme()
 
     const observer = new MutationObserver(updateTheme)
     observer.observe(document.documentElement, {
@@ -78,7 +89,7 @@ export const AnimatedThemeToggler = ({
       className={cn(className)}
       {...props}
     >
-      {isDark ? <Sun className="size-5"/> : <Moon className="size-5"/>}
+      {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
       <span className="sr-only">Toggle theme</span>
     </button>
   )
