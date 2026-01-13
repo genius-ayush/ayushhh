@@ -43,8 +43,8 @@ const TECH_STACK = [
     key: "react",
     title: "React",
     href: "https://react.dev/",
-    urldark: "/react-navigation.svg", 
-    urllight: "/react-navigation.svg",
+    urldark: "/react.svg", 
+    urllight: "/react.svg",
     categories: ["Library", "UI Library"],
   },
   {
