@@ -6,6 +6,29 @@ import { Button } from "@/components/ui/button";
 
 const PROJECTS = [
     {
+        logo: "/promptbaz.png",
+        title: "PromptBaz",
+        period: "2026 – ∞",
+        description:
+            "PromptBaz is a curated platform for discovering, exploring, and reusing high-quality AI prompts across multiple models. It allows users to browse visually verified prompts, view real output examples, and instantly copy prompts with the correct model settings such as aspect ratio and seed values. Built with a modern full-stack architecture, PromptBaz focuses on performance, clean UX, and responsive design to help creators reproduce consistent AI-generated results in seconds.",
+        features: [
+  "Curated AI prompt library with real output previews",
+  "One-click prompt reuse with accurate model configurations",
+  "Responsive, animation-rich UI built with Next.js and Tailwind CSS",
+  "Scalable backend architecture for prompt and media management"
+]
+ ,
+        tags: [
+            "Next.js",
+            "Node.js",
+            "TypeScript",
+            "Prisma ORM",
+            "PostgreSQL",
+            "Cloudnary" , 
+        ],
+        link: "https://promptbaz.vercel.app/"
+    },
+    {
         logo: "/drift.png",
         title: "Drift",
         period: "2025 – ∞",
@@ -52,7 +75,7 @@ const PROJECTS = [
             "API Optimization",
             "TypeScript"
         ],
-        link: "https://github.com/your-repo"
+        link: "https://solbot-sage.vercel.app/"
     },
     {
         logo: "/quickmint.png",
@@ -77,8 +100,9 @@ const PROJECTS = [
             "UI/UX",
             "On-chain Programs"
         ],
-        link: "https://github.com/your-repo"
+        link: "https://token-launchpad-murex.vercel.app/"
     },
+    
     {
         logo: "/bhaobhao.png",
         title: "PawGroom",
@@ -128,6 +152,28 @@ const PROJECTS = [
     },
 
     {
+        logo: "/xPay.png",
+        title: "xPayFrontend",
+        period: "2026 – ∞",
+        description:
+            "A mock of landing page. ",
+        features: [
+  "Responsive ",
+  "Pixcel perfect copy" , 
+  "UI/UX"
+]
+ ,
+        tags: [
+            "Next.js",
+            "Schadcn" , 
+            "TailwindCSS" , 
+            "TypeScript",
+            
+        ],
+        link: "https://x-pay-five.vercel.app/"
+    },
+
+    {
         logo: "/voiceHire.png",
         title: "VoiceHire AI",
         period: "2025 – ∞",
@@ -151,7 +197,7 @@ const PROJECTS = [
             "AI Interviewing",
             "Recruitment Automation"
         ],
-        link: "https://your-project-link"
+        link: "https://voice-hire.vercel.app/"
     }
     ,
     {
